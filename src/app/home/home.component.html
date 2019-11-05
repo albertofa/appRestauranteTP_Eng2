@@ -1,0 +1,13 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Tela Principal"></Label>
+</ActionBar>
+
+<GridLayout class="page">
+    <StackLayout class="p-20">
+        <Label text="Leitor QR-Code" class="h1 text-center"></Label>
+        <Button text="SCAN" (tap)="onScan()" class="btn btn-primary btn-active"></Button>
+        <div *ngIf="resultado">
+            <label text="Resultado QR-Code {{resultado}}"></label>
+        </div>
+    </StackLayout>    
+</GridLayout>
