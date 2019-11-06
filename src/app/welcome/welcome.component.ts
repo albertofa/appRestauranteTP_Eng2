@@ -2,13 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { BarcodeScanner } from 'nativescript-barcodescanner';
 
 @Component({
-    selector: "Home",
-    templateUrl: "./home.component.html"
+    selector: "Welcome",
+    templateUrl: "./welcome.component.html"
 })
-export class HomeComponent implements OnInit {
+export class WelcomeComponent implements OnInit {
 
     resultado:string;
-    constructor(private barcodeScanner: BarcodeScanner) {
+    constructor() {
         // Use the component constructor to inject providers.
     }
 
@@ -17,9 +17,10 @@ export class HomeComponent implements OnInit {
     }
 
     public onScan() {
-        this.barcodeScanner.scan({
+        
+        new BarcodeScanner().scan({
             formats: "QR_CODE, EAN_13",
-            showFlipCameraButton: true,   
+            showFlipCameraButton: false,   
             preferFrontCamera: false,     
             showTorchButton: true,        
             beepOnScan: true,             
